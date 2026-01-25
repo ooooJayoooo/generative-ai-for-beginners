@@ -11,7 +11,8 @@ export async function main() {
         console.log("== Chat Completions App ==");
 
         const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
-        const deploymentName = 'deployment-name-completion';
+        // const deploymentName = 'deployment-name-completion';
+        const deploymentName = process.env.AZURE_OPENAI_DEPLOYMENT || '';
         // const deploymentName = '<include-your-deployment-name-here>';
 
         const result = await client.getChatCompletions(deploymentName, [
