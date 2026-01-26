@@ -25,7 +25,8 @@ try:
 
     result = client.images.generate(
         model=model,
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils. It says "hello"',    # Enter your prompt text here
+        # prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils. It says "hello"',    # Enter your prompt text here
+        prompt='someone with great responsibilities that come with great power',    # Enter your prompt text here
         size='1024x1024',
         n=1
     )
