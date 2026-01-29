@@ -8,6 +8,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+print("@ Endpoint:",   os.environ.get("AZURE_OPENAI_ENDPOINT"))
+print("@ Deployment:", os.environ.get("AZURE_OPENAI_DEPLOYMENT"))
+print("Azure OpenAI Function Calling Assignment\n")
 
 
 def extract_json(text):
@@ -181,8 +184,8 @@ if response_message.function_call.name:
     function_response = function_to_call(**function_args)
 
     print("Output of function call:")
-    print(function_response)
-    print(type(function_response))
+    print("## " + str(function_response))
+    print("## " + str(type(function_response)))
 
 
     # Add the assistant response and function response to the messages

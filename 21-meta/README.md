@@ -7,7 +7,7 @@ This lesson will cover:
 - Exploring the two main Meta family models - Llama 3.1 and Llama 3.2 
 - Understanding the use-cases and scenarios for each model 
 - Code sample to show the unique features of each model 
-
+◊
 
 ## The Meta Family of Models 
 
