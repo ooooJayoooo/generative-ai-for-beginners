@@ -83,61 +83,6 @@ client = AzureOpenAI(
 deployment=os.environ['AZURE_OPENAI_DEPLOYMENT']
 
 
-# student_1_description="Emily Johnson is a sophomore majoring in computer science at Duke University. She has a 3.7 GPA. Emily is an active member of the university's Chess Club and Debate Team. She hopes to pursue a career in software engineering after graduating."
-
-# student_2_description = "Michael Lee is a sophomore majoring in computer science at Stanford University. He has a 3.8 GPA. Michael is known for his programming skills and is an active member of the university's Robotics Club. He hopes to pursue a career in artificial intelligence after finishing his studies."
-
-# prompt1 = f'''
-# Please extract the following information from the given text and return it as a JSON object:
-
-# name
-# major
-# school
-# grades
-# club
-
-# This is the body of text to extract the information from:
-# {student_1_description}
-# '''
-
-
-# prompt2 = f'''
-# Please extract the following information from the given text and return it as a JSON object:
-
-# name
-# major
-# school
-# grades
-# club
-
-# This is the body of text to extract the information from:
-# {student_2_description}
-# '''
-
-
-# openai_response1 = client.chat.completions.create(
-#     model=deployment,    
-#     messages = [{'role': 'user', 'content': prompt1}]
-# )
-# openai_response1_content = openai_response1.choices[0].message.content
-# print("OAI response 1:",openai_response1_content) 
-
-
-# openai_response2 = client.chat.completions.create(
-#     model=deployment,    
-#     messages = [{'role': 'user', 'content': prompt2}]
-# )
-# openai_response2_content = openai_response2.choices[0].message.content
-# print("OAI response 2:",openai_response2_content) 
-
-# # Loading the response as a JSON object
-# json_response1 = extract_json(openai_response1_content)
-# print("JSON Response 1:", json_response1)
-
-# # Loading the response as a JSON object
-# json_response2 = extract_json(openai_response2_content)
-# print("JSON Response 2:", json_response2)
-
 
 
 
@@ -149,17 +94,6 @@ deployment=os.environ['AZURE_OPENAI_DEPLOYMENT']
 
 print("\n\nFunction Calling Example:\n\n")
 
-
-# messages= [ {"role": "user", "content": "Find me a good course for a beginner student to learn Azure."} ]
-
-# print(f"## Message:\n   {messages[0]['content']}\n\n")
-
-
-# def list_available_functions(functions):
-#     list_of_functions = {}
-#     for func in functions:
-#         list_of_functions[func["name"]] = func["name"]
-#     return list_of_functions
 
 
 functions = [
@@ -220,6 +154,14 @@ print()
 print("##### Starting conversation loop #####")
 print()
 
+
+
+
+####################################################  
+##
+## conversation loop
+##
+####################################################
 
 
 IS_CONVERSATION_OVER = False
