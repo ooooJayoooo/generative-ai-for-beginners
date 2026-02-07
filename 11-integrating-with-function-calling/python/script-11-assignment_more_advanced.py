@@ -304,13 +304,21 @@ while not IS_CONVERSATION_OVER:
                 break
 
 
+    messages.append({
+        "role": response_message.role,
+        "content": response_message.content
+    })
+
     print()
     print("################################################")
     print("## Printing messages so far:")
     for i, msg in enumerate(messages):
-        print(f"##        # {i}: {str(msg)[:100]}...")
+        print(f"##        # {i}: type={type(msg)} msg={str(msg)[:100]}...")
     print("##")
     print()
+
+
+
 
     print("## Response from model:")
     print(response_message.content)
